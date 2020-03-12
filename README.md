@@ -39,7 +39,7 @@ We will need to do a few things:
   8. Click the save icon
   9. Navigate back to the Automations page
 
-#### Publish an event to the Mqtt Broker
+##### Publish an event to the Mqtt Broker
   1. Assuming you're running in docker go to the command line and run: `docker exec -it unifi-video-publisher-example_unifi-video_1 bash`
   2. Now that you're inside this running container, while observing the Automations page, run: `echo "motion|House West|start" >> /var/log/unifi-video/motion.log`, you should see `New Automation` turn off.
   
