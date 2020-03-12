@@ -1,0 +1,26 @@
+{
+   "log":true,
+   "logWatches":[
+      {
+         "filePath":"/var/log/unifi-video/motion.log",
+         "logParses":[
+            {
+               "topicParse":{
+                  "regularExpression": "/motion|(House|Garage) (North|East|West)/g",
+                  "output": "{0}/{1}"
+               },
+               "messageParse":{
+                  "regularExpression": "/(start|stop)/g",
+                  "output": "{0}"
+               }
+            }
+         ]
+      }
+   ],
+   "mqtt":{
+      "host":"mqtt-broker",
+      "port":"1883",
+      "username":"username",
+      "password":"password"
+   }
+}
