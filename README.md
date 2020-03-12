@@ -1,17 +1,19 @@
 # unifi-video-publisher-example
 
 ### How to test that this works:
-1. Clone this repo to your machine: `git clone git@github.com:TonyBrobston/unifi-video-publisher-example.git`
-2. Get into the directory: `cd unifi-video-publisher-example`
-3. Start the docker services: `docker-compose up` (these logs are worth reading through)
-4. Once all four docker services are up and running navigate to http://localhost:8123 (or substitute "localhost" for the ip of the machine these services are running on)
-5. Create a home assistant account (these creds will only matter if this instance will be long-lived)
-
-#### Now that we have Home Assistant up and running:
-We will need to do a few things:
+  - Get Home Assistant up and running
   - Subscribe Home Assistant to the Mqtt Broker
   - Setup an Automation
   - Publish an event to the Mqtt Broker
+
+##### Get Home Assistant up and running:
+  1. Clone this repo to your machine: `git clone git@github.com:TonyBrobston/unifi-video-publisher-example.git`
+  2. Get into the directory: `cd unifi-video-publisher-example`
+  3. Start the docker services: `docker-compose up` (these logs are worth reading through)
+  4. Once all four docker services are up and running navigate to http://localhost:8123 (or substitute "localhost" for the ip of the machine these services are running on)
+  5. Create a home assistant account (these creds will only matter if this instance will be long-lived)
+
+
 
 ##### Subscribe Home Assistant to the Mqtt Broker
   1. Navigate to the menu > Configuration > Integrations > click the "+" to add a new Integration
