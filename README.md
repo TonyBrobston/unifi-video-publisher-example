@@ -14,7 +14,7 @@
   4. Once all four docker services are up and running navigate to http://localhost:8123 (or substitute "localhost" for the ip of the machine these services are running on)
   5. Create a home assistant account (these creds will only matter if this instance will be long-lived)
 
-##### Subscribe Home Assistant to the Mqtt Broker
+##### Subscribe Home Assistant to the Mqtt Broker:
   1. Navigate to the menu > Configuration > Integrations > click the "+" to add a new Integration
   2. Choose "MQTT" and enter:
     - Broker: `mqtt-broker`
@@ -23,7 +23,7 @@
     - Password: `password`
   3. Click "Submit" and then "Finish"
 
-##### Setup an Automation
+##### Setup an Automation:
   1. Navigate to the menu > Configuration > Automations > click the "+" to add a new Automation
   2. Click "Skip"
   3. Name your Automation: `New Automation`
@@ -40,10 +40,10 @@
   8. Click the save icon
   9. Navigate back to the Automations page
 
-##### Publish an event to the Mqtt Broker
+##### Publish an event to the Mqtt Broker:
   1. Assuming you're running in docker go to the command line and run: `docker exec -it unifi-video-publisher-example_unifi-video_1 bash`
   2. Now that you're inside this running container, while observing the Automations page, run: `echo "motion|House West|start" >> /var/log/unifi-video/motion.log`, you should see `New Automation` turn off.
 
-##### Tear everything down
+##### Tear everything down:
   1. Hit `ctrl + c` on your running docker-compose window
   2. Run `docker-compose rm` to remove all containers created by this docker-compose
