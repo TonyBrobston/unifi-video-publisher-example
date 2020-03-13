@@ -20,7 +20,7 @@
    "mqtt":{
       "host":"mqtt-broker",
       "port":"1883",
-      "username":"username",
-      "password":"password"
+      "username":"your_mqtt_broker_username_here",
+      "password":"your_mqtt_broker_password_here"
    }
 }
