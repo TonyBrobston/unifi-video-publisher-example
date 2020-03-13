@@ -24,7 +24,7 @@
 
 ##### Other things to consider:
   1. You should change the Mqtt Broker username/password (`your_mqtt_broker_username_here` and `your_mqtt_broker_password_here` should not be used long term). This will involve changing a few things (all of these will use the same username/password):
-      - This is used by Home Assistant to connect to the mqtt-broker: https://github.com/TonyBrobston/unifi-video-publisher-example/blob/master/home-assistant/secrets.yaml
+      - This is used by Home Assistant to connect to the Mqtt Broker: https://github.com/TonyBrobston/unifi-video-publisher-example/blob/master/home-assistant/secrets.yaml
       - This is used by the unifi-video-publisher service (`logs-to-mqtt-broker` tool) to connect to the Mqtt Broker https://github.com/TonyBrobston/unifi-video-publisher-example/blob/master/logs-to-mqtt-publisher/options.json
       - This is used by the Mqtt Broker to create its own username/password (this will be done differently): https://github.com/TonyBrobston/unifi-video-publisher-example/blob/master/mosquitto/config/passwordfile With the docker-compose still running you'll need to execute this command with your username/password substituted in: `docker exec unifi-video-publisher-example_mqtt-broker_1 ash -c "mosquitto_passwd -b /mosquitto/config/passwordfile your_mqtt_broker_username_here your_mqtt_broker_password_here"`
   2. An automation that notifies yourself about motion is not a meaningful action, maybe turn a light on?
