@@ -1,0 +1,11 @@
+- id: my_unique_id1
+  alias: Notify when House West Camera detects motion
+  trigger:
+  - payload: start
+    platform: mqtt
+    topic: motion/House West
+  action:
+  - service: persistent_notification.create
+    data:
+      message: "House West camera detected motion!"
+      title: "Motion Event"

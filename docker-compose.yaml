@@ -5,6 +5,8 @@ services:
       image: homeassistant/home-assistant
       ports:
         - 8123:8123
+      volumes:
+        - ./home-assistant:/config
 
     unifi-video:
       image: pducharme/unifi-video-controller
