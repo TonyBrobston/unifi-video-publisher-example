@@ -10,22 +10,6 @@ services:
 
     unifi-video:
       image: pducharme/unifi-video-controller
-      cap_add:
-        - SYS_ADMIN
-        - DAC_READ_SEARCH
-      security_opt:
-        - apparmor:unconfined
-      ports:
-        - 10001:10001
-        - 1935:1935
-        - 6666:6666
-        - 7080:7080
-        - 7442:7442
-        - 7443:7443
-        - 7444:7444
-        - 7445:7445
-        - 7446:7446
-        - 7447:7447
       volumes:
         - unifi-video-logs:/var/log/unifi-video
 
