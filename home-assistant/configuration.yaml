@@ -11,7 +11,7 @@ tts:
 - platform: google_translate
 
 mqtt:
-- broker: mqtt-broker
+  broker: mqtt-broker
   port: 1883
   username: username
   password: password
