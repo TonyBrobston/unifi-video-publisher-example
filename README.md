@@ -25,3 +25,4 @@
 ##### Other things to consider:
   1. username and password should not be used long term
   2. An automation that notifys is not a meaningful action, maybe turn a light on?
+  3. Read through the entirety of this repo and try to make sense of things, I did my best to keep it concise as to not lose the consumers. If you have confusion feel free to create an issue and describe the confusion clearly and I'll see what I can change to make it more clear.
