@@ -10,6 +10,8 @@ services:
 
     unifi-video:
       image: pducharme/unifi-video-controller
+      cap_add:
+        - SYS_ADMIN
       volumes:
         - unifi-video-logs:/var/log/unifi-video
 
