@@ -13,8 +13,8 @@ tts:
 mqtt:
   broker: mqtt-broker
   port: 1883
-  username: username
-  password: password
+  username: !secret mqtt_broker_username
+  password: !secret mqtt_broker_password
 
 group: !include groups.yaml
 automation: !include automations.yaml
