@@ -23,6 +23,6 @@
   2. Run `docker-compose rm` to remove all containers created by this docker-compose
 
 ##### Other things to consider:
-  1. You should change the mqtt_broker username/password (your_mqtt_broker_username_here and your_mqtt_broker_password_here should not be used long term)
+  1. You should change the mqtt_broker username/password (`your_mqtt_broker_username_here` and `your_mqtt_broker_password_here` should not be used long term)
   2. An automation that notifys is not a meaningful action, maybe turn a light on?
   3. Read through the entirety of this repo and try to make sense of things, I did my best to keep it concise as to not lose the consumers. If you have confusion feel free to create an issue and describe the confusion clearly and I'll see what I can change to make it more clear.
