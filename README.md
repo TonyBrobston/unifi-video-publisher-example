@@ -2,48 +2,26 @@
 
 ### How to test that this works:
   - Get Home Assistant up and running
-  - Subscribe Home Assistant to the Mqtt Broker
-  - Setup an Automation
-  - Publish an event to the Mqtt Broker
+  - Modify a log file
   - Tear everything down
+  - Other things to consider
 
 ##### Get Home Assistant up and running:
   1. Clone this repo to your machine: `git clone git@github.com:TonyBrobston/unifi-video-publisher-example.git`
   2. Get into the directory: `cd unifi-video-publisher-example`
   3. Start the docker services: `docker-compose up` (these logs are worth reading through)
   4. Once all four docker services are up and running navigate to http://localhost:8123 (or substitute "localhost" for the ip of the machine these services are running on)
-  5. Create a home assistant account (these creds will only matter if this instance will be long-lived)
+  5. Create a home assistant account
 
-##### Subscribe Home Assistant to the Mqtt Broker:
-  1. Navigate to the menu > Configuration > Integrations > click the "+" to add a new Integration
-  2. Choose "MQTT" and enter:
-      - Broker: `mqtt-broker`
-      - Port: `1883`
-      - Username: `username`
-      - Password: `password`
-  3. Click "Submit" and then "Finish"
-
-##### Setup an Automation:
-  1. Navigate to the menu > Configuration > Automations > click the "+" to add a new Automation
-  2. Click "Skip"
-  3. Name your Automation: `New Automation`
-  4. Create a trigger:
-      - Trigger type: `MQTT`
-      - Topic: `motion/House West`
-      - Payload: `start`
-  5. Delete the Action
-  6. Click the save icon
-  7. Add the Action back:
-      - Action type: `Call service`
-      - Service: `automation.turn_off`
-      - Name of automation to turn off: `automation.new_automation`
-  8. Click the save icon
-  9. Navigate back to the Automations page
-
-##### Publish an event to the Mqtt Broker:
-  1. Go to the command line and execute this command that will put you inside the Unifi Video container: `docker exec -it unifi-video-publisher-example_unifi-video_1 bash`
-  2. While observing the Automations page, when you run this command you will see the `New Automation` turn off: `echo "motion|House West|start" >> /var/log/unifi-video/motion.log`
+##### Modify a log file:
+1. Observe the Notifications in the Menu Bar.
+2. Add a log line to Unifi Video's log file: `docker exec -it unifi-video-publisher-example_unifi-video_1 bash -c "echo '1577042817.781 2019-12-22 13:26:57.781/CST: INFO   [uv.analytics.motion] [AnalyticsService] [FCECDAD8B870|House West] MotionEvent type:start event:28345 clock:10377014318 in AnalyticsEvtBus-11' >> /var/log/unifi-video/motion.log"`
+3. You should now see a Motion Event notification.
 
 ##### Tear everything down:
   1. Hit `ctrl + c` on your running docker-compose window
   2. Run `docker-compose rm` to remove all containers created by this docker-compose
+
+##### Other things to consider:
+  1. username and password should not be used long term
+  2. An automation that notifys is not a meaningful action, maybe turn a light on?
